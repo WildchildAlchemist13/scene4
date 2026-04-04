@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ShieldCheck, ArrowLeft, CreditCard, Lock } from 'lucide-react';
+import { ShieldCheck, ArrowLeft, CreditCard, Lock, BookOpen } from 'lucide-react';
 
 const products = {
   '916-storyteller': {
@@ -89,8 +89,13 @@ export function Checkout() {
               {/* Subtle accent glow */}
               <div className={`absolute top-0 right-0 w-32 h-32 bg-${product.theme}/10 blur-[50px] pointer-events-none rounded-full`}></div>
               
-              <h3 className={`text-xl font-bold mb-2 text-${product.theme}`}>{product.title}</h3>
-              <p className="text-gray-400 text-sm mb-6">{product.desc}</p>
+              <div className={`aspect-[3/4] max-w-[150px] mx-auto bg-gray-800 mb-6 relative overflow-hidden flex items-center justify-center border border-${product.theme}/30 shadow-[0_0_15px_rgba(0,0,0,0.5)]`}>
+                <BookOpen className={`w-10 h-10 text-${product.theme} opacity-50`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none"></div>
+              </div>
+
+              <h3 className={`text-xl text-center font-bold mb-2 text-${product.theme}`}>{product.title}</h3>
+              <p className="text-gray-400 text-center text-sm mb-6">{product.desc}</p>
               
               <div className="flex items-end justify-between border-t border-gray-800 pt-4 mt-6">
                 <div>
