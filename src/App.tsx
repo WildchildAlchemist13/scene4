@@ -8,6 +8,7 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
 import { Books } from './pages/Books';
+import { Checkout } from './pages/Checkout';
 import { Login } from './pages/Login';
 import { Dashboard } from './pages/Dashboard';
 import { Diagnostic } from './pages/Diagnostic';
@@ -22,6 +23,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/books" element={<Books />} />
+            <Route path="/checkout/:id" element={<Checkout />} />
             <Route path="/login" element={<Login />} />
             
             <Route element={<ProtectedRoute />}>

@@ -1,4 +1,5 @@
 import { BookOpen, ShieldCheck } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function Books() {
   return (
@@ -33,7 +34,7 @@ export function Books() {
                   <span className="text-sm text-gray-500 line-through font-mono">$27</span>
                   <span className="text-2xl font-mono text-white">$13</span>
                 </div>
-                <button className="px-4 py-2 bg-white text-black font-display text-sm font-bold uppercase hover:bg-neon-cyan transition-colors">Purchase</button>
+                <Link to="/checkout/916-storyteller" className="px-4 py-2 bg-white text-black font-display text-sm font-bold uppercase hover:bg-neon-cyan transition-colors">Purchase</Link>
               </div>
             </div>
 
@@ -50,7 +51,7 @@ export function Books() {
                   <span className="text-sm text-gray-500 line-through font-mono">$57</span>
                   <span className="text-2xl font-mono text-white">$29</span>
                 </div>
-                <button className="px-4 py-2 bg-white text-black font-display text-sm font-bold uppercase hover:bg-neon-cyan transition-colors">Purchase</button>
+                <Link to="/checkout/grab-and-keep" className="px-4 py-2 bg-white text-black font-display text-sm font-bold uppercase hover:bg-neon-cyan transition-colors">Purchase</Link>
               </div>
             </div>
 
@@ -67,7 +68,7 @@ export function Books() {
                   <span className="text-sm text-gray-500 line-through font-mono">$159</span>
                   <span className="text-2xl font-mono text-white">$79</span>
                 </div>
-                <button className="px-4 py-2 bg-white text-black font-display text-sm font-bold uppercase hover:bg-neon-cyan transition-colors">Purchase</button>
+                <Link to="/checkout/story-mastery" className="px-4 py-2 bg-white text-black font-display text-sm font-bold uppercase hover:bg-neon-cyan transition-colors">Purchase</Link>
               </div>
             </div>
           </div>
@@ -97,7 +98,7 @@ export function Books() {
                   <span className="text-sm text-gray-500 line-through font-mono">$67</span>
                   <span className="text-3xl font-mono text-white">$33</span>
                 </div>
-                <button className="px-6 py-3 bg-neon-magenta text-black font-display text-sm font-bold uppercase hover:bg-white transition-colors">Purchase Bundle</button>
+                <Link to="/checkout/creator-bundle" className="px-6 py-3 bg-neon-magenta text-black font-display text-sm font-bold uppercase hover:bg-white transition-colors">Purchase Bundle</Link>
               </div>
             </div>
 
@@ -122,7 +123,7 @@ export function Books() {
                   <span className="text-sm text-gray-500 line-through font-mono">$199</span>
                   <span className="text-3xl font-mono text-white">$99</span>
                 </div>
-                <button className="px-6 py-3 bg-neon-green text-black font-display text-sm font-bold uppercase hover:bg-white transition-colors">Purchase Collection</button>
+                <Link to="/checkout/master-collection" className="px-6 py-3 bg-neon-green text-black font-display text-sm font-bold uppercase hover:bg-white transition-colors">Purchase Collection</Link>
               </div>
             </div>
           </div>
