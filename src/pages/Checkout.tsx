@@ -8,35 +8,40 @@ const products = {
     price: 13,
     originalPrice: 27,
     theme: 'neon-cyan',
-    desc: 'The foundational guide to adapting traditional screenwriting for vertical platforms.'
+    desc: 'The foundational guide to adapting traditional screenwriting for vertical platforms.',
+    image: './covers/storyteller.png'
   },
   'grab-and-keep': {
     title: 'Grab & Keep',
     price: 29,
     originalPrice: 57,
     theme: 'neon-cyan',
-    desc: 'Advanced retention tactics and psychological hooks for micro-drama series.'
+    desc: 'Advanced retention tactics and psychological hooks for micro-drama series.',
+    image: './covers/grabkeep.png'
   },
   'story-mastery': {
     title: 'Story & Screenplay Mastery',
     price: 79,
     originalPrice: 159,
     theme: 'neon-cyan',
-    desc: 'The complete curriculum. From concept to final draft for multi-season vertical shows.'
+    desc: 'The complete curriculum. From concept to final draft for multi-season vertical shows.',
+    image: './covers/mastery.png'
   },
   'creator-bundle': {
     title: 'CREATOR BUNDLE',
     price: 33,
     originalPrice: 84,
     theme: 'neon-magenta',
-    desc: 'Includes: The 9:16 Storyteller + Grab & Keep'
+    desc: 'Includes: The 9:16 Storyteller + Grab & Keep',
+    image: './covers/grabkeep.png'
   },
   'master-collection': {
     title: 'MASTER COLLECTION',
     price: 99,
     originalPrice: 243,
     theme: 'neon-green',
-    desc: 'The Complete Curriculum (All 3 Books)'
+    desc: 'The Complete Curriculum (All 3 Books)',
+    image: './covers/mastery.png'
   }
 };
 
@@ -90,7 +95,7 @@ export function Checkout() {
               <div className={`absolute top-0 right-0 w-32 h-32 bg-${product.theme}/10 blur-[50px] pointer-events-none rounded-full`}></div>
               
               <div className={`aspect-[3/4] max-w-[150px] mx-auto bg-gray-800 mb-6 relative overflow-hidden flex items-center justify-center border border-${product.theme}/30 shadow-[0_0_15px_rgba(0,0,0,0.5)]`}>
-                <BookOpen className={`w-10 h-10 text-${product.theme} opacity-50`} />
+                <img src={product.image} alt={product.title} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none"></div>
               </div>
 

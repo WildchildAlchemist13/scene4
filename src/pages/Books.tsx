@@ -24,7 +24,7 @@ export function Books() {
             {/* Book 1 */}
             <div className="bg-gray-900/30 border border-gray-800 p-6 flex flex-col">
               <div className="aspect-[3/4] bg-gray-800 mb-6 relative overflow-hidden flex items-center justify-center">
-                <BookOpen className="w-12 h-12 text-gray-600" />
+                <img src="./covers/storyteller.png" alt="The 9:16 Storyteller" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
               </div>
               <h3 className="text-xl font-bold mb-2">The 9:16 Storyteller</h3>
@@ -41,7 +41,7 @@ export function Books() {
             {/* Book 2 */}
             <div className="bg-gray-900/30 border border-gray-800 p-6 flex flex-col">
               <div className="aspect-[3/4] bg-gray-800 mb-6 relative overflow-hidden flex items-center justify-center">
-                <BookOpen className="w-12 h-12 text-gray-600" />
+                <img src="./covers/grabkeep.png" alt="Grab & Keep" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
               </div>
               <h3 className="text-xl font-bold mb-2">Grab & Keep</h3>
@@ -58,7 +58,7 @@ export function Books() {
             {/* Book 3 */}
             <div className="bg-gray-900/30 border border-gray-800 p-6 flex flex-col">
               <div className="aspect-[3/4] bg-gray-800 mb-6 relative overflow-hidden flex items-center justify-center">
-                <BookOpen className="w-12 h-12 text-gray-600" />
+                <img src="./covers/mastery.png" alt="Story & Screenplay Mastery" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
               </div>
               <h3 className="text-xl font-bold mb-2">Story & Screenplay Mastery</h3>
