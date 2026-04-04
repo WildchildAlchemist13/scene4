@@ -14,20 +14,12 @@ export function Login() {
     setLoading(true);
     setMessage('');
     
-    const isSupabaseConfigured = import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_URL !== 'YOUR_SUPABASE_URL';
-    
-    if (!isSupabaseConfigured) {
-      setMessage('Supabase is not configured. Please add your credentials to the Secrets panel to use the magic link.');
-      setLoading(false);
-      return;
-    }
-
-    // For demo purposes, we'll just sign in with a dummy password if it's not magic link
+    // Auth flow begins    // For demo purposes, we'll just sign in with a dummy password if it's not magic link
     // In a real app, you'd use magic links or proper password auth
     const { error } = await supabase.auth.signInWithOtp({
       email,
       options: {
-        emailRedirectTo: window.location.origin + '/dashboard',
+        emailRedirectTo: window.location.origin + '/#/dashboard',
       }
     });
 
