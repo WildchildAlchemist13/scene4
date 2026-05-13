@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ChevronRight, Play, BookOpen, PenTool, Download, CheckCircle, ShieldCheck, Star, Quote } from 'lucide-react';
+import { ChevronRight, Download, CheckCircle } from 'lucide-react';
 import React, { useState } from 'react';
 import { supabase } from '../lib/supabase';
 
@@ -13,16 +13,11 @@ function LeadMagnetSection() {
     e.preventDefault();
     setStatus('loading');
     try {
-      const { error } = await supabase.from('leads').insert([{ name, email }]);
+      const { error } = await supabase.from('leads').insert([{ email, source: 'home-hero', metadata: { name } }]);
       if (error) throw error;
       setStatus('success');
-      // Trigger download (simulated)
-      const link = document.createElement('a');
-      link.href = '#';
-      link.download = 'HBC_Framework_Blueprint.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      // Welcome email is sent server-side via the Supabase DB-webhook → /api/leads;
+      // the cheat sheet attaches to that email rather than triggering an in-page download.
     } catch (err) {
       console.error(err);
       setStatus('error');
@@ -41,8 +36,8 @@ function LeadMagnetSection() {
         {status === 'success' ? (
           <div className="bg-neon-green/10 border border-neon-green p-6 rounded-sm flex flex-col items-center justify-center">
             <CheckCircle className="w-12 h-12 text-neon-green mb-4" />
-            <h3 className="text-xl font-display text-white mb-2">TRANSMISSION SUCCESSFUL</h3>
-            <p className="text-neon-green font-mono text-sm">Your blueprint download has started.</p>
+            <h3 className="text-xl font-display text-white mb-2">CHECK YOUR INBOX</h3>
+            <p className="text-neon-green font-mono text-sm">The HBC Framework cheat sheet is on its way to {email}.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
@@ -121,19 +116,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* Trust Logos */}
-      <section className="py-8 border-b border-gray-900 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gray-500 font-mono text-xs uppercase tracking-widest mb-6">Trusted by creators featured on</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale">
-            <div className="font-display font-bold text-xl tracking-widest">TIKTOK CREATORS</div>
-            <div className="font-display font-bold text-xl tracking-widest">REELS ACADEMY</div>
-            <div className="font-display font-bold text-xl tracking-widest">INDIE SHORT FEST</div>
-            <div className="font-display font-bold text-xl tracking-widest">MICRO-DRAMA STUDIOS</div>
-          </div>
-        </div>
-      </section>
-
       {/* HBC Framework Section */}
       <section id="framework" className="py-24 bg-gray-900/20 border-y border-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -197,99 +179,20 @@ export function Home() {
       {/* Lead Magnet Section */}
       <LeadMagnetSection />
 
-      {/* Testimonials Section */}
-      <section className="py-24 bg-gray-900/20 border-t border-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-display font-bold tracking-widest mb-4">TRANSMISSIONS</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">Field reports from creators using the HBC Framework.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Testimonial 1 */}
-            <div className="bg-black border border-gray-800 p-8 rounded-sm relative">
-              <Quote className="absolute top-4 right-4 w-8 h-8 text-gray-800" />
-              <div className="flex text-neon-cyan mb-4">
-                <Star className="w-4 h-4 fill-current" /><Star className="w-4 h-4 fill-current" /><Star className="w-4 h-4 fill-current" /><Star className="w-4 h-4 fill-current" /><Star className="w-4 h-4 fill-current" />
-              </div>
-              <p className="text-gray-300 text-sm leading-relaxed mb-6">"The HBC Framework completely changed how I write. My retention rate on TikTok doubled within a week. The beat escalation tactics are lethal."</p>
-              <div className="flex items-center">
-                <div className="w-10 h-10 bg-gray-800 rounded-full mr-4 overflow-hidden">
-                  <img src="https://picsum.photos/seed/sarah/100/100" alt="Sarah J." className="w-full h-full object-cover grayscale opacity-80" referrerPolicy="no-referrer" />
-                </div>
-                <div>
-                  <div className="font-display font-bold text-white text-sm">Sarah J.</div>
-                  <div className="font-mono text-xs text-neon-cyan">Screenwriter</div>
-                </div>
-              </div>
-            </div>
-            {/* Testimonial 2 */}
-            <div className="bg-black border border-gray-800 p-8 rounded-sm relative">
-              <Quote className="absolute top-4 right-4 w-8 h-8 text-gray-800" />
-              <div className="flex text-neon-magenta mb-4">
-                <Star className="w-4 h-4 fill-current" /><Star className="w-4 h-4 fill-current" /><Star className="w-4 h-4 fill-current" /><Star className="w-4 h-4 fill-current" /><Star className="w-4 h-4 fill-current" />
-              </div>
-              <p className="text-gray-300 text-sm leading-relaxed mb-6">"The Master Collection is the best investment I've made for my micro-drama studio. The ROI is insane. We use this for every script now."</p>
-              <div className="flex items-center">
-                <div className="w-10 h-10 bg-gray-800 rounded-full mr-4 overflow-hidden">
-                  <img src="https://picsum.photos/seed/marcus/100/100" alt="Marcus T." className="w-full h-full object-cover grayscale opacity-80" referrerPolicy="no-referrer" />
-                </div>
-                <div>
-                  <div className="font-display font-bold text-white text-sm">Marcus T.</div>
-                  <div className="font-mono text-xs text-neon-magenta">Director</div>
-                </div>
-              </div>
-            </div>
-            {/* Testimonial 3 */}
-            <div className="bg-black border border-gray-800 p-8 rounded-sm relative">
-              <Quote className="absolute top-4 right-4 w-8 h-8 text-gray-800" />
-              <div className="flex text-neon-green mb-4">
-                <Star className="w-4 h-4 fill-current" /><Star className="w-4 h-4 fill-current" /><Star className="w-4 h-4 fill-current" /><Star className="w-4 h-4 fill-current" /><Star className="w-4 h-4 fill-current" />
-              </div>
-              <p className="text-gray-300 text-sm leading-relaxed mb-6">"The script diagnostic service pointed out exactly where my beats were dragging. The feedback was brutal but exactly what I needed."</p>
-              <div className="flex items-center">
-                <div className="w-10 h-10 bg-gray-800 rounded-full mr-4 overflow-hidden">
-                  <img src="https://picsum.photos/seed/elena/100/100" alt="Elena R." className="w-full h-full object-cover grayscale opacity-80" referrerPolicy="no-referrer" />
-                </div>
-                <div>
-                  <div className="font-display font-bold text-white text-sm">Elena R.</div>
-                  <div className="font-mono text-xs text-neon-green">Content Creator</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-24 bg-black border-t border-gray-900 relative overflow-hidden">
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full bg-neon-cyan/5 blur-[100px] rounded-full pointer-events-none"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-            <div className="md:w-1/2">
-              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-widest mb-6">PROFESSIONAL SCRIPT DIAGNOSTICS</h2>
-              <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                Submit your 90-second script and receive structured feedback using the Hook → Beat → Cliffhanger framework.
-              </p>
-              <ul className="space-y-4 mb-8 font-mono text-sm text-gray-300">
-                <li className="flex items-center"><ChevronRight className="w-4 h-4 text-neon-cyan mr-2" /> 48-hour turnaround</li>
-                <li className="flex items-center"><ChevronRight className="w-4 h-4 text-neon-cyan mr-2" /> Actionable structural feedback</li>
-                <li className="flex items-center"><ChevronRight className="w-4 h-4 text-neon-cyan mr-2" /> Retention probability score</li>
-              </ul>
-              <Link to="/diagnostic" className="inline-flex items-center justify-center px-8 py-4 text-base font-display font-bold text-black bg-neon-cyan hover:bg-white transition-colors rounded-sm uppercase tracking-widest">
-                <PenTool className="w-5 h-5 mr-3" />
-                Submit Script
-              </Link>
-            </div>
-            <div className="md:w-1/2 w-full">
-              <div className="aspect-video bg-gray-900 border border-gray-800 rounded-sm relative flex items-center justify-center overflow-hidden group">
-                <div className="absolute inset-0 bg-[url('https://picsum.photos/seed/cyberpunk/800/450')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity"></div>
-                <div className="absolute inset-0 bg-black/50"></div>
-                <div className="w-16 h-16 rounded-full border-2 border-neon-cyan flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform cursor-pointer">
-                  <Play className="w-6 h-6 text-neon-cyan ml-1" />
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* The Books CTA — replaces fake testimonials + phantom diagnostic */}
+      <section className="py-24 bg-black border-t border-gray-900">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-widest mb-6">THE BOOKS</h2>
+          <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+            Three books that take you from format basics through 80-episode IP development — written from inside active Scene4 productions.
+          </p>
+          <Link
+            to="/books"
+            className="inline-flex items-center justify-center px-8 py-4 text-base font-display font-bold text-black bg-neon-cyan hover:bg-white transition-colors rounded-sm uppercase tracking-widest"
+          >
+            Browse the books
+            <ChevronRight className="ml-2 w-5 h-5" />
+          </Link>
         </div>
       </section>
     </div>
