@@ -10,13 +10,6 @@ export function Books() {
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">Premium guides and frameworks for the modern storyteller.</p>
         </div>
 
-        {/* Launch Offer Banner */}
-        <div className="max-w-3xl mx-auto mb-16 bg-neon-cyan/10 border border-neon-cyan p-4 rounded-sm text-center">
-          <p className="text-neon-cyan font-display font-bold tracking-widest uppercase">
-            Launch Offer — 50% Off (First 30 Days)
-          </p>
-        </div>
-
         {/* Individual Books */}
         <div className="mb-24">
           <h2 className="text-2xl font-display font-bold tracking-widest mb-8 border-b border-gray-800 pb-4">INDIVIDUAL BOOKS</h2>
@@ -31,10 +24,10 @@ export function Books() {
               <p className="text-gray-400 text-sm mb-6 flex-grow">The foundational guide to adapting traditional screenwriting for vertical platforms.</p>
               <div className="flex items-center justify-between mt-auto">
                 <div className="flex flex-col">
-                  <span className="text-sm text-gray-500 line-through font-mono">$27</span>
-                  <span className="text-2xl font-mono text-white">$13</span>
+                  <span className="text-sm text-gray-500 line-through font-mono">$39</span>
+                  <span className="text-2xl font-mono text-white">$19</span>
                 </div>
-                <Link to="/checkout/916-storyteller" className="px-4 py-2 bg-white text-black font-display text-sm font-bold uppercase hover:bg-neon-cyan transition-colors">Purchase</Link>
+                <Link to="/books/916-storyteller" className="px-4 py-2 bg-white text-black font-display text-sm font-bold uppercase hover:bg-neon-cyan transition-colors">Read more</Link>
               </div>
             </div>
 
@@ -48,10 +41,10 @@ export function Books() {
               <p className="text-gray-400 text-sm mb-6 flex-grow">Advanced retention tactics and psychological hooks for micro-drama series.</p>
               <div className="flex items-center justify-between mt-auto">
                 <div className="flex flex-col">
-                  <span className="text-sm text-gray-500 line-through font-mono">$57</span>
-                  <span className="text-2xl font-mono text-white">$29</span>
+                  <span className="text-sm text-gray-500 line-through font-mono">$79</span>
+                  <span className="text-2xl font-mono text-white">$39</span>
                 </div>
-                <Link to="/checkout/grab-and-keep" className="px-4 py-2 bg-white text-black font-display text-sm font-bold uppercase hover:bg-neon-cyan transition-colors">Purchase</Link>
+                <Link to="/books/grab-and-keep" className="px-4 py-2 bg-white text-black font-display text-sm font-bold uppercase hover:bg-neon-cyan transition-colors">Read more</Link>
               </div>
             </div>
 
@@ -65,10 +58,10 @@ export function Books() {
               <p className="text-gray-400 text-sm mb-6 flex-grow">The complete curriculum. From concept to final draft for multi-season vertical shows.</p>
               <div className="flex items-center justify-between mt-auto">
                 <div className="flex flex-col">
-                  <span className="text-sm text-gray-500 line-through font-mono">$159</span>
-                  <span className="text-2xl font-mono text-white">$79</span>
+                  <span className="text-sm text-gray-500 line-through font-mono">$199</span>
+                  <span className="text-2xl font-mono text-white">$99</span>
                 </div>
-                <Link to="/checkout/story-mastery" className="px-4 py-2 bg-white text-black font-display text-sm font-bold uppercase hover:bg-neon-cyan transition-colors">Purchase</Link>
+                <Link to="/books/story-mastery" className="px-4 py-2 bg-white text-black font-display text-sm font-bold uppercase hover:bg-neon-cyan transition-colors">Read more</Link>
               </div>
             </div>
           </div>
@@ -90,15 +83,14 @@ export function Books() {
               </div>
 
               <div className="mb-6 text-sm font-mono text-gray-400 space-y-1 border-t border-gray-800 pt-4">
-                <div className="flex justify-between"><span>Value:</span> <span className="line-through">$84</span></div>
-                <div className="flex justify-between text-neon-magenta"><span>Savings:</span> <span>$17</span></div>
+                <div className="flex justify-between"><span>Books separately:</span> <span className="line-through">$58</span></div>
+                <div className="flex justify-between text-neon-magenta"><span>You save:</span> <span>$9</span></div>
               </div>
               <div className="flex items-center justify-between mt-auto">
                 <div className="flex flex-col">
-                  <span className="text-sm text-gray-500 line-through font-mono">$67</span>
-                  <span className="text-3xl font-mono text-white">$33</span>
+                  <span className="text-3xl font-mono text-white">$49</span>
                 </div>
-                <Link to="/checkout/creator-bundle" className="px-6 py-3 bg-neon-magenta text-black font-display text-sm font-bold uppercase hover:bg-white transition-colors">Purchase Bundle</Link>
+                <Link to="/checkout/creator-bundle" className="px-6 py-3 bg-neon-magenta text-black font-display text-sm font-bold uppercase hover:bg-white transition-colors">Buy bundle</Link>
               </div>
             </div>
 
@@ -115,24 +107,23 @@ export function Books() {
               </div>
 
               <div className="mb-6 text-sm font-mono text-gray-400 space-y-1 border-t border-gray-800 pt-4">
-                <div className="flex justify-between"><span>Total Value:</span> <span className="line-through">$243</span></div>
-                <div className="flex justify-between text-neon-green"><span>Savings:</span> <span>$44</span></div>
+                <div className="flex justify-between"><span>Books separately:</span> <span className="line-through">$157</span></div>
+                <div className="flex justify-between text-neon-green"><span>You save:</span> <span>$28</span></div>
               </div>
               <div className="flex items-center justify-between mt-auto">
                 <div className="flex flex-col">
-                  <span className="text-sm text-gray-500 line-through font-mono">$199</span>
-                  <span className="text-3xl font-mono text-white">$99</span>
+                  <span className="text-3xl font-mono text-white">$129</span>
                 </div>
-                <Link to="/checkout/master-collection" className="px-6 py-3 bg-neon-green text-black font-display text-sm font-bold uppercase hover:bg-white transition-colors">Purchase Collection</Link>
+                <Link to="/checkout/master-collection" className="px-6 py-3 bg-neon-green text-black font-display text-sm font-bold uppercase hover:bg-white transition-colors">Buy collection</Link>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Guarantee */}
+        {/* Guarantee — matches the actual refund policy */}
         <div className="mt-24 flex items-center justify-center text-gray-400 bg-gray-900/30 py-4 px-6 rounded-sm border border-gray-800 max-w-2xl mx-auto">
           <ShieldCheck className="w-6 h-6 text-neon-green mr-3 flex-shrink-0" />
-          <span className="font-mono text-sm">30-Day Money-Back Guarantee on all digital artifacts. No questions asked.</span>
+          <span className="font-mono text-sm">7-day refund window on delivery defects. <Link to="/refund-policy" className="underline hover:text-white">Read the policy →</Link></span>
         </div>
       </div>
     </div>
