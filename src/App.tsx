@@ -11,7 +11,6 @@ import { Books } from './pages/Books';
 import { Checkout } from './pages/Checkout';
 import { Login } from './pages/Login';
 import { Dashboard } from './pages/Dashboard';
-import { Diagnostic } from './pages/Diagnostic';
 import { ProtectedRoute } from './components/ProtectedRoute';
 
 export default function App() {
@@ -28,7 +27,6 @@ export default function App() {
             
             <Route element={<ProtectedRoute />}>
               <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/diagnostic" element={<Diagnostic />} />
             </Route>
           </Routes>
         </main>

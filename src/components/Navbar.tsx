@@ -35,10 +35,7 @@ export function Navbar() {
                 <Link to="/dashboard" className="text-sm font-medium text-gray-300 hover:text-neon-cyan transition-colors px-3 py-2">
                   Dashboard
                 </Link>
-                <Link to="/diagnostic" className="text-sm font-medium text-gray-300 hover:text-neon-cyan transition-colors px-3 py-2">
-                  Diagnostic
-                </Link>
-                <button 
+                <button
                   onClick={() => supabase.auth.signOut()}
                   className="text-sm font-medium text-neon-magenta hover:text-white transition-colors px-3 py-2"
                 >
