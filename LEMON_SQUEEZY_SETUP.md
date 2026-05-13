@@ -22,11 +22,13 @@ Follow top-to-bottom; nothing here depends on Vercel CLI — every step uses das
 
 | Product Name | Price (USD) | Slug used in code |
 |---|---|---|
-| The 9:16 Storyteller | 13 | `916-storyteller` |
-| Grab & Keep | 29 | `grab-and-keep` |
-| Story & Screenplay Mastery | 79 | `story-mastery` |
-| Creator Bundle (Books 1 + 2) | 33 | `creator-bundle` |
-| Master Collection (All 3 Books) | 99 | `master-collection` |
+| The 9:16 Storyteller | 19 | `916-storyteller` |
+| Grab & Keep | 39 | `grab-and-keep` |
+| Story & Screenplay Mastery | 99 | `story-mastery` |
+| Creator Bundle (Books 1 + 2) | 49 | `creator-bundle` |
+| Master Collection (All 3 Books) | 129 | `master-collection` |
+
+**Note on product descriptions:** Do NOT include explicit page-count claims (e.g. "390 pages") in LS product copy. Sell on the deliverable — frameworks, chapters, workbook materials, included books — not on page count. Page-count numbers can vary between PDF renders and create refund-bait if expectations don't match.
 
 4. For each product, click **Share → Buy link** and copy the URL. Format:
    `https://YOUR-STORE.lemonsqueezy.com/buy/VARIANT-UUID`
@@ -68,6 +70,8 @@ Upload the PDFs with these exact filenames:
 - `story-mastery.pdf`
 
 These names are referenced in [`lib/products.ts`](lib/products.ts) — change either side together if you rename.
+
+**Source PDFs:** the rebranded, full-content Scene4 PDFs are at `~/Downloads/scene4-pdfs-final/` on your Mac. Drag them into the `books` bucket via the Supabase web UI. (If you ever need to regenerate, run the pipeline at [`tools/pdf-pipeline/`](tools/pdf-pipeline/) — see its README.)
 
 ### 3c. Database webhook for welcome emails
 

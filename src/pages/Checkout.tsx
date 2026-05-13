@@ -22,8 +22,8 @@ interface ProductView {
 const products: Record<ProductSlug, ProductView> = {
   '916-storyteller': {
     title: 'The 9:16 Storyteller',
-    price: 13,
-    originalPrice: 27,
+    price: 19,
+    originalPrice: 39,
     theme: 'neon-cyan',
     desc: 'The foundational guide to adapting traditional screenwriting for vertical platforms.',
     image: '/covers/storyteller.png',
@@ -31,8 +31,8 @@ const products: Record<ProductSlug, ProductView> = {
   },
   'grab-and-keep': {
     title: 'Grab & Keep',
-    price: 29,
-    originalPrice: 57,
+    price: 39,
+    originalPrice: 79,
     theme: 'neon-cyan',
     desc: 'Advanced retention tactics and psychological hooks for micro-drama series.',
     image: '/covers/grabkeep.png',
@@ -40,8 +40,8 @@ const products: Record<ProductSlug, ProductView> = {
   },
   'story-mastery': {
     title: 'Story & Screenplay Mastery',
-    price: 79,
-    originalPrice: 159,
+    price: 99,
+    originalPrice: 199,
     theme: 'neon-cyan',
     desc: 'The complete curriculum. From concept to final draft for multi-season vertical shows.',
     image: '/covers/mastery.png',
@@ -49,8 +49,8 @@ const products: Record<ProductSlug, ProductView> = {
   },
   'creator-bundle': {
     title: 'CREATOR BUNDLE',
-    price: 33,
-    originalPrice: 84,
+    price: 49,
+    originalPrice: 118,
     theme: 'neon-magenta',
     desc: 'Includes: The 9:16 Storyteller + Grab & Keep',
     image: '/covers/grabkeep.png',
@@ -58,8 +58,8 @@ const products: Record<ProductSlug, ProductView> = {
   },
   'master-collection': {
     title: 'MASTER COLLECTION',
-    price: 99,
-    originalPrice: 243,
+    price: 129,
+    originalPrice: 297,
     theme: 'neon-green',
     desc: 'The Complete Curriculum (All 3 Books)',
     image: '/covers/mastery.png',
